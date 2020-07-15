@@ -1,0 +1,361 @@
+{
+  "settings": {
+    "name": "Gryphene",
+    "currentPage": "index.html",
+    "theme": {
+      "name": "startupamp",
+      "title": "StartupAMP",
+      "styling": {
+        "primaryColor": "#e3699a",
+        "secondaryColor": "#ec7499",
+        "successColor": "#361291",
+        "infoColor": "#30d5a5",
+        "warningColor": "#022e93",
+        "dangerColor": "#0A193B",
+        "mainFont": "Source Sans Pro",
+        "display1Font": "Source Sans Pro",
+        "display1Size": 5.6,
+        "display2Font": "Source Sans Pro",
+        "display2Size": 3.4,
+        "display3Font": "Source Sans Pro",
+        "display3Size": 2.4,
+        "display4Font": "Source Sans Pro",
+        "display4Size": 1.8,
+        "display5Font": "Source Sans Pro",
+        "display5Size": 1.4,
+        "display6Font": "Source Sans Pro",
+        "display6Size": 1,
+        "display7Font": "Source Sans Pro",
+        "display7Size": 0.8,
+        "isRoundedButtons": true,
+        "isScrollToTopButton": true,
+        "arrowColor": "#e3699a",
+        "bodyPadding": false,
+        "bodyBG": "#ffffff"
+      },
+      "additionalSetColors": [
+        "#66dde4"
+      ]
+    },
+    "path": "@PROJECT_PATH@",
+    "versionFirst": "4.12.4",
+    "siteFonts": [],
+    "imageResize": true,
+    "favicon": "@PROJECT_PATH@/assets/images/g.ico",
+    "canonical-url": "https://www.gryphene.com",
+    "cssOptimize": true,
+    "robotsSwitcher": true,
+    "robotsText": "User-agent: *\nDisallow: /cgi-bin\n\n",
+    "sitemapSwitcher": true,
+    "siteUrl": "http://gryphene.com",
+    "sitemapSwitcherAuto": "on",
+    "google-analytics": "<!-- Global site tag (gtag.js) - Google Analytics -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-31660572-3\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'UA-31660572-3');\n</script>",
+    "cookiesAlert": {
+      "customDialogSelector": false,
+      "colorText": "#424a4d",
+      "colorBg": "#eaeff1",
+      "colorButton": "",
+      "colorLink": "#424a4d",
+      "underlineLink": true,
+      "opacity": "99",
+      "opacityOverlay": "80",
+      "text": "We use cookies to give you the best experience. Read our <a href='privacy.html'>cookie policy</a>.",
+      "textButton": "Agree"
+    },
+    "gdpr": {
+      "colorText": "#a7a7a7",
+      "colorLink": "#149dcc",
+      "underlineLink": false,
+      "text": "By continuing you agree to our <a href='terms.html'>Terms of Service</a> and <a href='policy.html'>Privacy Policy</a>."
+    },
+    "pwa-switcher": false,
+    "uniqCompNum": 8,
+    "versionPublish": "4.12.4"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "Home",
+        "meta_descr": "",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value",
+              "& when (@gradient)": {
+                "background": "linear-gradient(135deg, @bg-value 0%, @bgcolor2 100%)"
+              }
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              "& when not (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background-color": "@overlayColor",
+                  "opacity": "@overlayOpacity"
+                }
+              },
+              "& when (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background": "linear-gradient(135deg, @overlayColor 0%, @ovcolor2 100%)",
+                  "opacity": "@overlayOpacity"
+                }
+              }
+            },
+            ".mbr-section-title": {
+              "color": "#ffffff",
+              "text-align": "center"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#ffffff",
+              "text-align": "center"
+            },
+            "h1": {
+              "margin": "0"
+            }
+          },
+          "_name": "header4",
+          "_customHTML": "<section class=\"header4\" group=\"Headers\" plugins=\"amp-main\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"7\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"7\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#19a3c1\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/mbr-1920x1195.jpg\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#022e93\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#a54997\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\" checked>\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#022e93\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-lg-10 mbr-col-md-12\">\n                <h1 class=\"mbr-fonts-style mbr-section-title\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\"><b>GRYPHENE</b></h1>\n                <p class=\"mbr-fonts-style mbr-text\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text, .mbr-section-btn\" mbr-if=\"showText\">Envisioned guide through the hexagonal matrix<br>of electronic dance music&nbsp;</p>\n                <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-7\"><a class=\"btn btn-lg mbr-editable-button btn-secondary\" href=\"index.html#features2-3\" data-app-placeholder=\"Type Text\">SERVICES</a>\n                    <a class=\"btn btn-lg mbr-editable-button btn-white\" href=\"index.html#form2-4\" data-app-placeholder=\"Type Text\">CONTACT</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "s4Lhh5DRVo",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header_gryphene",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": []
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value",
+              "& when (@gradient)": {
+                "background": "linear-gradient(135deg, @bg-value 0%, @bgcolor2 100%)"
+              }
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              "& when not (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background-color": "@overlayColor",
+                  "opacity": "@overlayOpacity"
+                }
+              },
+              "& when (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background": "linear-gradient(135deg, @overlayColor 0%, @ovcolor2 100%)",
+                  "opacity": "@overlayOpacity"
+                }
+              }
+            },
+            "& when not (@showSubTitle)": {
+              "h1": {
+                "margin-bottom": "3rem"
+              }
+            },
+            "h3": {
+              "margin-bottom": "3rem"
+            },
+            ".block": {
+              "border-radius": "2rem",
+              "padding": "2rem 2.5rem",
+              "margin-bottom": "2rem",
+              "box-shadow": "0px 0px 30px 10px rgba(0, 0, 0, 0.2)",
+              "transition": "transform 0.3s ease-in-out",
+              "&:hover": {
+                "-webkit-transform": "scale(1.1)",
+                "transform": "scale(1.1)"
+              }
+            },
+            ".block-1": {
+              "background": "linear-gradient(135deg, @bg11 0%, @bg12 100%)"
+            },
+            ".block-2": {
+              "background": "linear-gradient(135deg, @bg21 0%, @bg22 100%)"
+            },
+            ".block-3": {
+              "background": "linear-gradient(135deg, @bg31 0%, @bg32 100%)"
+            },
+            ".block-4": {
+              "background": "linear-gradient(135deg, @bg41 0%, @bg42 100%)"
+            },
+            "p": {
+              "margin": "0",
+              "line-height": "25px"
+            },
+            ".block1": {
+              "color": "#ffffff"
+            }
+          },
+          "_name": "features2",
+          "_customHTML": "<section class=\"features2\" group=\"Features\" plugins=\"amp-main\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"15\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"15\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle1\" checked>\n        <input type=\"checkbox\" title=\"Show Sub Title\" name=\"showSubTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Titles\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Texts\" name=\"showText\" checked>\n        <select title=\"Blocks\" name=\"itemsAmount\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\" selected>4</option>\n        </select>\n\n        <input type=\"color\" title=\"Block 1 Gradient Color 1\" name=\"bg11\" value=\"#fede9a\" condition=\"itemsAmount > 0\">\n        <input type=\"color\" title=\"Block 1 Gradient Color 2\" name=\"bg12\" value=\"#a54997\" condition=\"itemsAmount > 0\">\n        <input type=\"color\" title=\"Block 2 Gradient Color 1\" name=\"bg21\" value=\"#e3699a\" condition=\"itemsAmount > 1\">\n        <input type=\"color\" title=\"Block 2 Gradient Color 2\" name=\"bg22\" value=\"#361291\" condition=\"itemsAmount > 1\">\n        <input type=\"color\" title=\"Block 3 Gradient Color 1\" name=\"bg31\" value=\"#361291\" condition=\"itemsAmount > 2\">\n        <input type=\"color\" title=\"Block 3 Gradient Color 2\" name=\"bg32\" value=\"#66dde4\" condition=\"itemsAmount > 2\">\n        <input type=\"color\" title=\"Block 4 Gradient Color 1\" name=\"bg41\" value=\"#fede9a\" condition=\"itemsAmount > 3\">\n        <input type=\"color\" title=\"Block 4 Gradient Color 2\" name=\"bg42\" value=\"#361291\" condition=\"itemsAmount > 3\">\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#5fc7c6\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/bk-1-1400x718.jpg\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#3c5ca2\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\">\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#fede9a\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n\n        <h1 class=\"mbr-fonts-style maintitle mbr-white align-center\" mbr-theme-style=\"display-3\" mbr-if=\"showTitle1\" data-app-selector=\".maintitle\">\n            <b>Up Your Game&nbsp;</b>Your Music</h1>\n        <h3 class=\"mbr-fonts-style subtitle mbr-white align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showSubTitle\" data-app-selector=\".subtitle\">Learn the advance skills to make it in the music business&nbsp;</h3>\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-lg-3 mbr-col-md-8\" mbr-if=\"itemsAmount > 0\">\n                <div class=\"block-1 block\">\n                    <h2 class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".block1\">\n                        <b>Launch</b>\n                    </h2>\n                    <p class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-6\" data-app-selector=\".block1\" mbr-if=\"showText\">\n                        A music driven website to showcase your work &nbsp; &nbsp;<br>\n                    </p>\n                </div>\n            </div>\n            <div class=\"mbr-col-lg-3 mbr-col-md-8\" mbr-if=\"itemsAmount > 1\">\n                <div class=\"block-2 block\">\n                    <h2 class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".block1\">\n                        <b>Create</b>\n                    </h2>\n                    <p class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-6\" data-app-selector=\".block1\" mbr-if=\"showText\">\n                        A meaninful Brand with our consultancy services</p>\n                </div>\n            </div>\n            <div class=\"mbr-col-lg-3 mbr-col-md-8\" mbr-if=\"itemsAmount > 2\">\n                <div class=\"block-3 block\">\n                    <h2 class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".block1\">\n                        <b>Produce</b></h2>\n                    <p class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-6\" data-app-selector=\".block1\" mbr-if=\"showText\">\n                        Learn from a former Ableton Tech agent</p>\n                </div>\n            </div>\n            <div class=\"mbr-col-lg-3 mbr-col-md-8\" mbr-if=\"itemsAmount > 3\">\n                <div class=\"block-4 block\">\n                    <h2 class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".block1\">\n                        <b>Realize</b>\n                    </h2>\n                    <p class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-6\" data-app-selector=\".block1\" mbr-if=\"showText\">\n                        #1 hit through our mixing and mastering services</p>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "s4Li45G7qV",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "services_gryphene",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": []
+        },
+        {
+          "alias": "soundcloud",
+          "_isSecondary": true,
+          "typeCompatible": "isAMP",
+          "_styles": {
+            "padding-top": "(@paddingTop * 25px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              ".mbr-overlay": {
+                "background-color": "@overlayColor",
+                "opacity": "@overlayOpacity"
+              }
+            },
+            "amp-soundcloud": {
+              "height": "~\"@{scHeight}px\" !important"
+            }
+          },
+          "_name": "soundcloudamp1",
+          "_customHTML": "<section class=\"soundcloudamp1\" group=\"Media\" plugins=\"amp-main, amp-soundcloud\">\n\t<mbr-parameters>\n\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n\n\t\t<input type=\"range\" inline title=\"Soundcloud Height\" name=\"scHeight\" min=\"100\" max=\"200\" step=\"50\" value=\"150\">\n\t\t<input type=\"color\" title=\"Soundcloud Color\" name=\"scColor\" value=\"#585858\">\n\n\t\t<input type=\"text\" title=\"Track ID\" name=\"trackId\" value=\"136241752\">\n\n\t\t<fieldset type=\"background\" name=\"bg\">\n\t\t\t<input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/mbr-1920x1257.jpg\" selected>\n\t\t\t<input type=\"color\" title=\"Background Color\" value=\"#ffffff\">\n\t\t</fieldset>\n\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type!='color'\">\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"bg.type!='color' && overlay\">\n\t\t<input type=\"range\" inline title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"bg.type!='color' && overlay\">\n\t\t<!-- End block parameters -->\n\t</mbr-parameters>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay&&bg.type !== 'color'\"></div>\n\t<div class=\"container\">\n\t\t<div class=\"sound-block\">\n\t\t\t<amp-soundcloud class=\"mobirise-loader\" layout=\"fixed-height\" height=\"150\" data-trackid=\"136241752\" data-color=\"585858\">\n\t\t\t\t<div placeholder class=\"placeholder\"></div>\n\t\t\t</amp-soundcloud>\n\t\t</div>\n\t</div>\n</section>",
+          "_cid": "s4LfvKjVf3",
+          "_anchor": "soundcloudamp_gryphene",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value",
+              "& when (@gradient)": {
+                "background": "linear-gradient(135deg, @bg-value 0%, @bgcolor2 100%)"
+              }
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              "& when not (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background-color": "@overlayColor",
+                  "opacity": "@overlayOpacity"
+                }
+              },
+              "& when (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background": "linear-gradient(135deg, @overlayColor 0%, @ovcolor2 100%)",
+                  "opacity": "@overlayOpacity"
+                }
+              }
+            },
+            ".mbr-section-title, .mbr-text": {
+              "color": "#ffffff"
+            },
+            ".bgwhite": {
+              "background-color": "white",
+              "padding": "30px",
+              "border-radius": "2rem",
+              "box-shadow": "0px 0px 60px 10px rgba(0, 0, 0, 0.3)"
+            },
+            ".mbr-section-btn": {
+              "margin-bottom": "2rem"
+            },
+            ".text2, .title2": {
+              "color": "#0a193b",
+              "text-align": "center"
+            },
+            ".text1, .mbr-section-btn1": {
+              "text-align": "left"
+            },
+            ".mbr-section-btn1": {
+              "padding-top": "1rem"
+            },
+            "@media (max-width: 991px)": {
+              ".bgwhite": {
+                "margin-top": "1rem"
+              }
+            }
+          },
+          "_name": "form2",
+          "_customHTML": "<section class=\"form2\" group=\"Forms\" plugins=\"amp-main,amp-form,amp-mustache\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Main Title\" name=\"showmainTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Forn Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#783396\" selected>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#fede9a\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\" checked>\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#022e93\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-lg-8 mbr-col-md-12\">\n                <h1 class=\"mbr-fonts-style mbr-section-title\" mbr-theme-style=\"display-3\" mbr-if=\"showmainTitle\" data-app-selector=\".mbr-section-title\">\n                    <b>Launch </b>Your Career Today!&nbsp;</h1>\n                    <p class=\"mbr-fonts-style mbr-text text1\" mbr-theme-style=\"display-5\" data-app-selector=\".text1, .mbr-section-btn1\" mbr-if=\"showText\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi\n                        <br> consequat pharetra ex, vitae feugiat erat consectetur sed. Praesent commodo sed est eget pharetra. Curabitur\n                    vel risus ac elit sodales scelerisque.</p>\n                    <div class=\"mbr-section-btn1\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-7\"><a class=\"btn btn-lg mbr-editable-button btn-white\" href=\"mailto:info@gryphene.com\" data-app-placeholder=\"Type Text\">\n                                <span class=\"iconfont-wapper\">\n                                    <span class=\"fa fa-long-arrow-right mbr-iconfont mbr-iconfont-btn\"></span>MORE INFO</span></a></div>\n                        </div>\n                        <div class=\"mbr-col-lg-4 mbr-col-md-6 mbr-col-sm-12 bgwhite\">\n                            <h2 class=\"mbr-fonts-style title2 mbr-bold\" mbr-theme-style=\"display-3\" mbr-if=\"showTitle\" data-app-selector=\".title2\">Contact Us</h2>\n                            <p class=\"mbr-fonts-style mbr-text text2\" mbr-theme-style=\"display-6\" data-app-selector=\".text2, .mbr-section-btn\" mbr-if=\"showText\">Lorem ipsum dolor sit amet, consectetur adipisc elit. Morbi consequat pharetra ex, vitae feugiat erat consectetur\n                                sed.\n                            </p>\n                            <div class=\"line\"></div>\n                            <div mbr-form>\n                                <!---Formbuilder Form--->\n                                <form action=\"agustajch@gmail.com\" action-xhr name=\"Mobirise Form\" method=\"POST\" class=\"mbr-form\">\n                                    <div class=\"mbr-row\">\n                                        <div submit-success class=\"mbr-col-md-12 mbr-col-sm-12\">\n                                            <template data-form-alert type=\"amp-mustache\">Contact recieved successfully!</template>\n                                        </div> \n                                        <div submit-error class=\"mbr-col-md-12 mbr-col-sm-12\">\n                                            <template data-form-alert type=\"amp-mustache\">Contact recieved successfully!</template>\n                                        </div>\n                                        </div>\n                                    <div class=\"dragArea mbr-row\">\n                                        <div data-for=\"form[data][0][1]\" class=\"mbr-col-md-12 mbr-col-sm-12 field\">\n                                            <input type=\"hidden\" name=\"form[data][0][0]\" value=\"Name\">\n                                            <input type=\"text\" name=\"form[data][0][1]\" placeholder=\"Name\" data-form-field=\"Name\" mbr-theme-style=\"display-6\" required=\"required\" class=\"field-input\">\n                                        </div>\n                                        <div data-for=\"form[data][1][1]\" class=\"mbr-col-md-12 mbr-col-sm-12 field\">\n                                            <input type=\"hidden\" name=\"form[data][1][0]\" value=\"Phone\">\n                                            <input type=\"tel\" name=\"form[data][1][1]\" placeholder=\"Phone\" pattern=\"[0-9]{3}-[0-9]{3}-[0-9]{4}\" data-form-field=\"Phone\" mbr-theme-style=\"display-6\" class=\"field-input\">\n                                        </div>\n                                        <div data-for=\"form[data][2][1]\" class=\"mbr-col-md-12 mbr-col-sm-12 field\">\n                                            <input type=\"hidden\" name=\"form[data][2][0]\" value=\"Email\">\n                                            <input type=\"email\" name=\"form[data][2][1]\" placeholder=\"Email\" data-form-field=\"Email\" mbr-theme-style=\"display-6\" required=\"required\" class=\"field-input\">\n                                        </div>\n                                        <div data-for=\"form[data][3][1]\" class=\"mbr-col-md-12 mbr-col-sm-12 field\">\n                                            <input type=\"hidden\" name=\"form[data][3][0]\" value=\"Message\">\n                                            <textarea type=\"textarea\" name=\"form[data][3][1]\" placeholder=\"Message\" data-form-field=\"Message\" mbr-theme-style=\"display-6\" class=\"field-input\"></textarea>\n                                        </div>\n                                        <div data-for mbr-buttons=\"true\" mbr-theme-style=\"display-7\" data-toolbar=\"-mbrBtnMove,-mbrBtnLink,-mbrBtnAdd\" class=\"mbr-col-md-12 mbr-section-btn align-center mbr-col-sm-12 field\">\n                                            <a type=\"submit\" class=\"btn btn-lg btn-info\">SEND MESSAGE</a>\n                                        </div>\n                                    </div>\n                                </form><!---Formbuilder Form--->\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </section>",
+          "_cid": "s4LkqmmFRH",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "contact_form_gryphene",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": []
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value",
+              "& when (@gradient)": {
+                "background": "linear-gradient(135deg, @bg-value 0%, @bgcolor2 100%)"
+              }
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              "& when not (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background-color": "@overlayColor",
+                  "opacity": "@overlayOpacity"
+                }
+              },
+              "& when (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background": "linear-gradient(135deg, @overlayColor 0%, @ovcolor2 100%)",
+                  "opacity": "@overlayOpacity"
+                }
+              }
+            },
+            ".mbr-text": {
+              "color": "#ffffff",
+              "text-align": "center"
+            }
+          },
+          "_name": "footer7",
+          "_customHTML": "<section class=\"footer7\" group=\"Footers\" plugins=\"amp-main\" global once=\"footer\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"2\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"2\" condition=\"fullScreen == false\">\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#022e93\" selected>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#19a3c1\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\" checked>\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#022e93\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n        <div class=\"align-center\">\n            <h4 class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text\">\n                Copyright (c) 2020 Gryphene</h4>\n        </div>\n    </div>\n</section>",
+          "_cid": "s4MBExE8le",
+          "_protectedParams": [],
+          "_global": true,
+          "_once": "footer",
+          "_params": {},
+          "_anchor": "footer_gryphene",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": []
+        }
+      ]
+    }
+  }
+}
