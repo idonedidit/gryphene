@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Gryphene",
-    "currentPage": "privacy.html",
+    "currentPage": "index.html",
     "theme": {
       "name": "startupamp",
       "title": "StartupAMP",
@@ -30,7 +30,7 @@
         "isRoundedButtons": true,
         "isScrollToTopButton": true,
         "arrowColor": "#e3699a",
-        "bodyPadding": false,
+        "bodyPadding": true,
         "bodyBG": "#ffffff"
       },
       "additionalSetColors": [
@@ -39,7 +39,13 @@
     },
     "path": "@PROJECT_PATH@",
     "versionFirst": "4.12.4",
-    "siteFonts": [],
+    "siteFonts": [
+      {
+        "css": "'Source Sans Pro', sans-serif",
+        "name": "Source Sans Pro",
+        "url": "https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i"
+      }
+    ],
     "imageResize": true,
     "favicon": "@PROJECT_PATH@/assets/images/g.ico",
     "canonical-url": "https://www.gryphene.com",
@@ -52,36 +58,38 @@
     "google-analytics": "<!-- Global site tag (gtag.js) - Google Analytics -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-31660572-3\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'UA-31660572-3');\n</script>",
     "cookiesAlert": {
       "customDialogSelector": false,
-      "colorText": "#424a4d",
+      "colorText": "#ffffff",
       "colorBg": "#eaeff1",
       "colorButton": "",
-      "colorLink": "#424a4d",
+      "colorLink": "#2bb4c5",
       "underlineLink": true,
-      "opacity": "7",
+      "opacity": "9",
       "opacityOverlay": "80",
-      "text": "We use cookies to give you the best experience. Read our <a href='privacy.html'>cookie policy</a>.",
+      "text": "We use cookies to give you the best experience. Read our <a href='/privacy.html'>cookie policy</a>.",
       "textButton": "Agree"
     },
     "gdpr": {
-      "colorText": "#a7a7a7",
-      "colorLink": "#149dcc",
-      "underlineLink": false,
-      "text": "By continuing you agree to our <a href='terms.html'>Terms of Service</a> and <a href='policy.html'>Privacy Policy</a>."
+      "colorText": "#000000",
+      "colorLink": "#527cd8",
+      "underlineLink": true,
+      "text": "By continuing you agree to our <a href='/terms.html'>Terms of Service</a> and <a href='/policy.html'>Privacy Policy</a>."
     },
     "pwa-switcher": false,
-    "uniqCompNum": 11,
-    "versionPublish": "4.12.4"
+    "uniqCompNum": 19,
+    "versionPublish": "5.0.16",
+    "screenshot": "screenshot.png",
+    "publishChangesOnly": false
   },
   "pages": {
     "index.html": {
       "settings": {
         "main": true,
         "title": "Home",
-        "meta_descr": "Gryphene Music- Ableton Expert",
+        "meta_descr": "Gryphene Music - Ableton Expert",
         "header_custom": "",
         "footer_custom": "",
         "html_before": "",
-        "meta_image": "@PROJECT_PATH@/assets/images/mbr-1920x1564.png"
+        "meta_image": "@PROJECT_PATH@/assets/images/mbr-1920x1197.png"
       },
       "components": [
         {
@@ -125,15 +133,15 @@
             }
           },
           "_name": "header4",
-          "_customHTML": "<section class=\"header4\" group=\"Headers\" plugins=\"amp-main\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"7\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"7\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#19a3c1\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/mbr-1920x1195.jpg\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#022e93\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#a54997\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\" checked>\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#022e93\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-lg-10 mbr-col-md-12\">\n                <h1 class=\"mbr-fonts-style mbr-section-title\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\"><b>GRYPHENE</b></h1>\n                <p class=\"mbr-fonts-style mbr-text\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text, .mbr-section-btn\" mbr-if=\"showText\">Envisioned guide through the hexagonal matrix<br>of electronic dance music&nbsp;</p>\n                <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-7\"><a class=\"btn btn-lg mbr-editable-button btn-secondary\" href=\"index.html#features2-3\" data-app-placeholder=\"Type Text\">SERVICES</a>\n                    <a class=\"btn btn-lg mbr-editable-button btn-white\" href=\"index.html#form2-4\" data-app-placeholder=\"Type Text\">CONTACT</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"header4\" group=\"Headers\" plugins=\"amp-main\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"7\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"7\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#19a3c1\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/mbr-1920x1195.jpg\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#022e93\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#a54997\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\" checked>\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#022e93\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-lg-10 mbr-col-md-12\">\n                <h1 class=\"mbr-fonts-style mbr-section-title\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\"><b>GRYPHENE</b></h1>\n                <p class=\"mbr-fonts-style mbr-text\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text, .mbr-section-btn\" mbr-if=\"showText\">Envisioned guide through the hexagonal matrix<br>of electronic dance music&nbsp;</p>\n                <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-7\"><a class=\"btn btn-lg mbr-editable-button btn-secondary\" href=\"index.html#services_gryphene\" data-app-placeholder=\"Type Text\">SERVICES</a>\n                    <a class=\"btn btn-lg mbr-editable-button btn-white\" href=\"index.html#contact_form_gryphene\" data-app-placeholder=\"Type Text\">CONTACT</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "s4Lhh5DRVo",
+          "_anchor": "header_gryphene",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {},
-          "_anchor": "header_gryphene",
-          "_PHPplaceholders": [],
-          "_JSplaceholders": []
+          "_params": {}
         },
         {
           "alias": false,
@@ -203,15 +211,15 @@
             }
           },
           "_name": "features2",
-          "_customHTML": "<section class=\"features2\" group=\"Features\" plugins=\"amp-main\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"15\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"15\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle1\" checked>\n        <input type=\"checkbox\" title=\"Show Sub Title\" name=\"showSubTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Titles\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Texts\" name=\"showText\" checked>\n        <select title=\"Blocks\" name=\"itemsAmount\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\" selected>4</option>\n        </select>\n\n        <input type=\"color\" title=\"Block 1 Gradient Color 1\" name=\"bg11\" value=\"#fede9a\" condition=\"itemsAmount > 0\">\n        <input type=\"color\" title=\"Block 1 Gradient Color 2\" name=\"bg12\" value=\"#a54997\" condition=\"itemsAmount > 0\">\n        <input type=\"color\" title=\"Block 2 Gradient Color 1\" name=\"bg21\" value=\"#e3699a\" condition=\"itemsAmount > 1\">\n        <input type=\"color\" title=\"Block 2 Gradient Color 2\" name=\"bg22\" value=\"#361291\" condition=\"itemsAmount > 1\">\n        <input type=\"color\" title=\"Block 3 Gradient Color 1\" name=\"bg31\" value=\"#361291\" condition=\"itemsAmount > 2\">\n        <input type=\"color\" title=\"Block 3 Gradient Color 2\" name=\"bg32\" value=\"#66dde4\" condition=\"itemsAmount > 2\">\n        <input type=\"color\" title=\"Block 4 Gradient Color 1\" name=\"bg41\" value=\"#fede9a\" condition=\"itemsAmount > 3\">\n        <input type=\"color\" title=\"Block 4 Gradient Color 2\" name=\"bg42\" value=\"#361291\" condition=\"itemsAmount > 3\">\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#5fc7c6\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/bk-1-1400x718.jpg\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#3c5ca2\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\">\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#fede9a\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n\n        <h1 class=\"mbr-fonts-style maintitle mbr-white align-center\" mbr-theme-style=\"display-3\" mbr-if=\"showTitle1\" data-app-selector=\".maintitle\">\n            <b>Up Your Game&nbsp;</b>Your Music</h1>\n        <h3 class=\"mbr-fonts-style subtitle mbr-white align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showSubTitle\" data-app-selector=\".subtitle\">Learn the advance skills to make it in the music business&nbsp;</h3>\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-lg-3 mbr-col-md-8\" mbr-if=\"itemsAmount > 0\">\n                <div class=\"block-1 block\">\n                    <h2 class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".block1\">\n                        <b>Launch</b>\n                    </h2>\n                    <p class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-6\" data-app-selector=\".block1\" mbr-if=\"showText\">\n                        A music driven website to showcase your work &nbsp; &nbsp;<br>\n                    </p>\n                </div>\n            </div>\n            <div class=\"mbr-col-lg-3 mbr-col-md-8\" mbr-if=\"itemsAmount > 1\">\n                <div class=\"block-2 block\">\n                    <h2 class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".block1\">\n                        <b>Create</b>\n                    </h2>\n                    <p class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-6\" data-app-selector=\".block1\" mbr-if=\"showText\">\n                        A meaninful Brand with our consultancy services</p>\n                </div>\n            </div>\n            <div class=\"mbr-col-lg-3 mbr-col-md-8\" mbr-if=\"itemsAmount > 2\">\n                <div class=\"block-3 block\">\n                    <h2 class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".block1\">\n                        <b>Produce</b></h2>\n                    <p class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-6\" data-app-selector=\".block1\" mbr-if=\"showText\">\n                        Learn from a former Ableton Tech agent</p>\n                </div>\n            </div>\n            <div class=\"mbr-col-lg-3 mbr-col-md-8\" mbr-if=\"itemsAmount > 3\">\n                <div class=\"block-4 block\">\n                    <h2 class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".block1\">\n                        <b>Realize</b>\n                    </h2>\n                    <p class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-6\" data-app-selector=\".block1\" mbr-if=\"showText\">\n                        #1 hit through our mixing and mastering services</p>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"features2\" group=\"Features\" plugins=\"amp-main\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"15\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"15\" step=\"1\" value=\"12\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle1\" checked>\n        <input type=\"checkbox\" title=\"Show Sub Title\" name=\"showSubTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Titles\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Texts\" name=\"showText\" checked>\n        <select title=\"Blocks\" name=\"itemsAmount\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\" selected>4</option>\n        </select>\n\n        <input type=\"color\" title=\"Block 1 Gradient Color 1\" name=\"bg11\" value=\"#fede9a\" condition=\"itemsAmount > 0\">\n        <input type=\"color\" title=\"Block 1 Gradient Color 2\" name=\"bg12\" value=\"#a54997\" condition=\"itemsAmount > 0\">\n        <input type=\"color\" title=\"Block 2 Gradient Color 1\" name=\"bg21\" value=\"#e3699a\" condition=\"itemsAmount > 1\">\n        <input type=\"color\" title=\"Block 2 Gradient Color 2\" name=\"bg22\" value=\"#361291\" condition=\"itemsAmount > 1\">\n        <input type=\"color\" title=\"Block 3 Gradient Color 1\" name=\"bg31\" value=\"#361291\" condition=\"itemsAmount > 2\">\n        <input type=\"color\" title=\"Block 3 Gradient Color 2\" name=\"bg32\" value=\"#66dde4\" condition=\"itemsAmount > 2\">\n        <input type=\"color\" title=\"Block 4 Gradient Color 1\" name=\"bg41\" value=\"#fede9a\" condition=\"itemsAmount > 3\">\n        <input type=\"color\" title=\"Block 4 Gradient Color 2\" name=\"bg42\" value=\"#361291\" condition=\"itemsAmount > 3\">\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#5fc7c6\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/bk-1-1400x718.jpg\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#3c5ca2\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\">\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#fede9a\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n\n        <h1 class=\"mbr-fonts-style maintitle mbr-white align-center\" mbr-theme-style=\"display-3\" mbr-if=\"showTitle1\" data-app-selector=\".maintitle\">\n            <b>Up Your Game&nbsp;</b><b><br></b>Empower Your Music</h1>\n        <h3 class=\"mbr-fonts-style subtitle mbr-white align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showSubTitle\" data-app-selector=\".subtitle\">Learn the advance skills to make it in the music business&nbsp;</h3>\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-lg-3 mbr-col-md-8\" mbr-if=\"itemsAmount > 0\">\n                <div class=\"block-1 block\">\n                    <h2 class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".block1\">\n                        <b>Launch</b>\n                    </h2>\n                    <p class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-6\" data-app-selector=\".block1\" mbr-if=\"showText\">\n                        A music driven website to showcase your work<br>\n                    </p>\n                </div>\n            </div>\n            <div class=\"mbr-col-lg-3 mbr-col-md-8\" mbr-if=\"itemsAmount > 1\">\n                <div class=\"block-2 block\">\n                    <h2 class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".block1\">\n                        <b>Create</b>\n                    </h2>\n                    <p class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-6\" data-app-selector=\".block1\" mbr-if=\"showText\">\n                        A meaningful Brand with our consultancy services</p>\n                </div>\n            </div>\n            <div class=\"mbr-col-lg-3 mbr-col-md-8\" mbr-if=\"itemsAmount > 2\">\n                <div class=\"block-3 block\">\n                    <h2 class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".block1\">\n                        <b>Produce</b></h2>\n                    <p class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-6\" data-app-selector=\".block1\" mbr-if=\"showText\">\n                        Learn from a former Ableton Tech agent</p>\n                </div>\n            </div>\n            <div class=\"mbr-col-lg-3 mbr-col-md-8\" mbr-if=\"itemsAmount > 3\">\n                <div class=\"block-4 block\">\n                    <h2 class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".block1\">\n                        <b>Realize</b>\n                    </h2>\n                    <p class=\"mbr-fonts-style block1 mbr-white\" mbr-theme-style=\"display-6\" data-app-selector=\".block1\" mbr-if=\"showText\">#1 hit through our mixing &amp; mastering services</p>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "s4Li45G7qV",
+          "_anchor": "services_gryphene",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {},
-          "_anchor": "services_gryphene",
-          "_PHPplaceholders": [],
-          "_JSplaceholders": []
+          "_params": {}
         },
         {
           "alias": "soundcloud",
@@ -235,7 +243,7 @@
             }
           },
           "_name": "soundcloudamp1",
-          "_customHTML": "<section class=\"soundcloudamp1\" group=\"Media\" plugins=\"amp-main, amp-soundcloud\">\n\t<mbr-parameters>\n\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n\n\t\t<input type=\"range\" inline title=\"Soundcloud Height\" name=\"scHeight\" min=\"100\" max=\"200\" step=\"50\" value=\"150\">\n\t\t<input type=\"color\" title=\"Soundcloud Color\" name=\"scColor\" value=\"#585858\">\n\n\t\t<input type=\"text\" title=\"Track ID\" name=\"trackId\" value=\"136241752\">\n\n\t\t<fieldset type=\"background\" name=\"bg\">\n\t\t\t<input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/mbr-1920x1257.jpg\" selected>\n\t\t\t<input type=\"color\" title=\"Background Color\" value=\"#ffffff\">\n\t\t</fieldset>\n\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type!='color'\">\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"bg.type!='color' && overlay\">\n\t\t<input type=\"range\" inline title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"bg.type!='color' && overlay\">\n\t\t<!-- End block parameters -->\n\t</mbr-parameters>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay&&bg.type !== 'color'\"></div>\n\t<div class=\"container\">\n\t\t<div class=\"sound-block\">\n\t\t\t<amp-soundcloud class=\"mobirise-loader\" layout=\"fixed-height\" height=\"150\" data-trackid=\"136241752\" data-color=\"585858\">\n\t\t\t\t<div placeholder class=\"placeholder\"></div>\n\t\t\t</amp-soundcloud>\n\t\t</div>\n\t</div>\n</section>",
+          "_customHTML": "<section class=\"soundcloudamp1\" group=\"Media\" plugins=\"amp-main, amp-soundcloud\">\n\t<mbr-parameters>\n\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"9\">\n\n\t\t<input type=\"range\" inline title=\"Soundcloud Height\" name=\"scHeight\" min=\"100\" max=\"200\" step=\"50\" value=\"100\">\n\t\t<input type=\"color\" title=\"Soundcloud Color\" name=\"scColor\" value=\"#ec7499\">\n\n\t\t<input type=\"text\" title=\"Track ID\" name=\"trackId\" value=\"136241752\">\n\n\t\t<fieldset type=\"background\" name=\"bg\">\n\t\t\t<input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/mbr-1920x1257.jpg\" selected>\n\t\t\t<input type=\"color\" title=\"Background Color\" value=\"#ffffff\">\n\t\t</fieldset>\n\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type!='color'\" checked>\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"bg.type!='color' && overlay\">\n\t\t<input type=\"range\" inline title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"bg.type!='color' && overlay\">\n\t\t<!-- End block parameters -->\n\t</mbr-parameters>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay&&bg.type !== 'color'\"></div>\n\t<div class=\"container\">\n\t\t<div class=\"sound-block\">\n\t\t\t<amp-soundcloud class=\"mobirise-loader\" layout=\"fixed-height\" height=\"100\" data-trackid=\"136241752\" data-color=\"ec7499\">\n\t\t\t\t<div placeholder class=\"placeholder\"></div>\n\t\t\t</amp-soundcloud>\n\t\t</div>\n\t</div>\n</section>",
           "_cid": "s4LfvKjVf3",
           "_anchor": "soundcloudamp_gryphene",
           "_PHPplaceholders": [],
@@ -273,94 +281,27 @@
                 }
               }
             },
-            ".mbr-section-title, .mbr-text": {
-              "color": "#ffffff"
-            },
-            ".bgwhite": {
-              "background-color": "white",
-              "padding": "30px",
-              "border-radius": "2rem",
-              "box-shadow": "0px 0px 60px 10px rgba(0, 0, 0, 0.3)"
-            },
-            ".mbr-section-btn": {
-              "margin-bottom": "2rem"
-            },
-            ".text2, .title2": {
-              "color": "#0a193b",
-              "text-align": "center"
-            },
-            ".text1, .mbr-section-btn1": {
-              "text-align": "left"
-            },
-            ".mbr-section-btn1": {
-              "padding-top": "1rem"
-            },
-            "@media (max-width: 991px)": {
-              ".bgwhite": {
-                "margin-top": "1rem"
-              }
-            }
-          },
-          "_name": "form2",
-          "_customHTML": "<section class=\"form2\" group=\"Forms\" plugins=\"amp-main,amp-form,amp-mustache\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Main Title\" name=\"showmainTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Forn Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#783396\" selected>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#fede9a\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\" checked>\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#022e93\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-lg-8 mbr-col-md-12\">\n                <h1 class=\"mbr-fonts-style mbr-section-title\" mbr-theme-style=\"display-3\" mbr-if=\"showmainTitle\" data-app-selector=\".mbr-section-title\">\n                    <b>Launch </b>Your Career Today!&nbsp;</h1>\n                    <p class=\"mbr-fonts-style mbr-text text1\" mbr-theme-style=\"display-5\" data-app-selector=\".text1, .mbr-section-btn1\" mbr-if=\"showText\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi\n                        <br> consequat pharetra ex, vitae feugiat erat consectetur sed. Praesent commodo sed est eget pharetra. Curabitur\n                    vel risus ac elit sodales scelerisque.</p>\n                    <div class=\"mbr-section-btn1\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-7\"><a class=\"btn btn-lg mbr-editable-button btn-white\" href=\"mailto:info@gryphene.com\" data-app-placeholder=\"Type Text\">\n                                <span class=\"iconfont-wapper\">\n                                    <span class=\"fa fa-long-arrow-right mbr-iconfont mbr-iconfont-btn\"></span>MORE INFO</span></a></div>\n                        </div>\n                        <div class=\"mbr-col-lg-4 mbr-col-md-6 mbr-col-sm-12 bgwhite\">\n                            <h2 class=\"mbr-fonts-style title2 mbr-bold\" mbr-theme-style=\"display-3\" mbr-if=\"showTitle\" data-app-selector=\".title2\">Contact Us</h2>\n                            <p class=\"mbr-fonts-style mbr-text text2\" mbr-theme-style=\"display-6\" data-app-selector=\".text2, .mbr-section-btn\" mbr-if=\"showText\">Lorem ipsum dolor sit amet, consectetur adipisc elit. Morbi consequat pharetra ex, vitae feugiat erat consectetur\n                                sed.\n                            </p>\n                            <div class=\"line\"></div>\n                            <div mbr-form>\n                                <!---Formbuilder Form--->\n                                <form action=\"agustajch@gmail.com\" action-xhr name=\"Mobirise Form\" method=\"POST\" class=\"mbr-form\">\n                                    <div class=\"mbr-row\">\n                                        <div submit-success class=\"mbr-col-md-12 mbr-col-sm-12\">\n                                            <template data-form-alert type=\"amp-mustache\">Contact recieved successfully!</template>\n                                        </div> \n                                        <div submit-error class=\"mbr-col-md-12 mbr-col-sm-12\">\n                                            <template data-form-alert type=\"amp-mustache\">Contact recieved successfully!</template>\n                                        </div>\n                                        </div>\n                                    <div class=\"dragArea mbr-row\">\n                                        <div data-for=\"form[data][0][1]\" class=\"mbr-col-md-12 mbr-col-sm-12 field\">\n                                            <input type=\"hidden\" name=\"form[data][0][0]\" value=\"Name\">\n                                            <input type=\"text\" name=\"form[data][0][1]\" placeholder=\"Name\" data-form-field=\"Name\" mbr-theme-style=\"display-6\" required=\"required\" class=\"field-input\">\n                                        </div>\n                                        <div data-for=\"form[data][1][1]\" class=\"mbr-col-md-12 mbr-col-sm-12 field\">\n                                            <input type=\"hidden\" name=\"form[data][1][0]\" value=\"Phone\">\n                                            <input type=\"tel\" name=\"form[data][1][1]\" placeholder=\"Phone\" pattern=\"[0-9]{3}-[0-9]{3}-[0-9]{4}\" data-form-field=\"Phone\" mbr-theme-style=\"display-6\" class=\"field-input\">\n                                        </div>\n                                        <div data-for=\"form[data][2][1]\" class=\"mbr-col-md-12 mbr-col-sm-12 field\">\n                                            <input type=\"hidden\" name=\"form[data][2][0]\" value=\"Email\">\n                                            <input type=\"email\" name=\"form[data][2][1]\" placeholder=\"Email\" data-form-field=\"Email\" mbr-theme-style=\"display-6\" required=\"required\" class=\"field-input\">\n                                        </div>\n                                        <div data-for=\"form[data][3][1]\" class=\"mbr-col-md-12 mbr-col-sm-12 field\">\n                                            <input type=\"hidden\" name=\"form[data][3][0]\" value=\"Message\">\n                                            <textarea type=\"textarea\" name=\"form[data][3][1]\" placeholder=\"Message\" data-form-field=\"Message\" mbr-theme-style=\"display-6\" class=\"field-input\"></textarea>\n                                        </div>\n                                        <div data-for mbr-buttons=\"true\" mbr-theme-style=\"display-7\" data-toolbar=\"-mbrBtnMove,-mbrBtnLink,-mbrBtnAdd\" class=\"mbr-col-md-12 mbr-section-btn align-center mbr-col-sm-12 field\">\n                                            <a type=\"submit\" class=\"btn btn-lg btn-info\">SEND MESSAGE</a>\n                                        </div>\n                                    </div>\n                                </form><!---Formbuilder Form--->\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </section>",
-          "_cid": "s4LkqmmFRH",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {},
-          "_anchor": "contact_form_gryphene",
-          "_PHPplaceholders": [],
-          "_JSplaceholders": []
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 1rem)",
-              "padding-bottom": "(@paddingBottom * 1rem)"
-            },
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value",
-              "& when (@gradient)": {
-                "background": "linear-gradient(135deg, @bg-value 0%, @bgcolor2 100%)"
-              }
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)",
-              "& when not (@overlayGradient)": {
-                ".mbr-overlay": {
-                  "background-color": "@overlayColor",
-                  "opacity": "@overlayOpacity"
-                }
-              },
-              "& when (@overlayGradient)": {
-                ".mbr-overlay": {
-                  "background": "linear-gradient(135deg, @overlayColor 0%, @ovcolor2 100%)",
-                  "opacity": "@overlayOpacity"
-                }
-              }
-            },
             ".mbr-text": {
               "color": "#ffffff",
               "text-align": "center"
             }
           },
           "_name": "footer7",
-          "_customHTML": "<section class=\"footer7\" group=\"Footers\" plugins=\"amp-main\" global once=\"footer\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"2\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"2\" condition=\"fullScreen == false\">\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#022e93\" selected>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#19a3c1\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\" checked>\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#022e93\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n        <div class=\"align-center\">\n            <h4 class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text\">\n                Copyright (c) 2020 Gryphene</h4>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"footer7\" group=\"Footers\" plugins=\"amp-main\" global once=\"footer\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"4\" condition=\"fullScreen == false\">\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#6394ff\" selected>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#a54997\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\" checked>\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#022e93\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n        <div class=\"align-center\">\n            <h4 class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text\">\n                Copyright (c) 2020 Gryphene</h4>\n        </div>\n    </div>\n</section>",
           "_cid": "s4MBExE8le",
+          "_anchor": "footer_gryphene",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
           "_protectedParams": [],
           "_global": true,
           "_once": "footer",
-          "_params": {},
-          "_anchor": "footer_gryphene",
-          "_PHPplaceholders": [],
-          "_JSplaceholders": []
+          "_params": {}
         }
       ]
     },
     "privacy.html": {
       "settings": {
-        "title": "Gryphene - Privacy ",
+        "title": "Privacy ",
         "order": 1,
         "header_custom": "",
         "html_before": "",
@@ -451,11 +392,103 @@
           "_name": "features13",
           "_customHTML": "<section class=\"features13\" group=\"Features\" plugins=\"amp-main, amp-accordion, font-awesome\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"4\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"4\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <select title=\"Tabs\" name=\"tabsAmount\">\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\">4</option>\n            <option value=\"5\" selected>5</option>\n            <option value=\"6\">6</option>\n        </select>\n        <input type=\"color\" title=\"Icons Color\" name=\"iconsColor\" value=\"#ffffff\">\n        <input type=\"range\" inline title=\"Icons Size\" name=\"iconsSize\" min=\"1\" max=\"5\" step=\"1\" value=\"2\">\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#f8b79a\" selected>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#783396\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\" checked>\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#022e93\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-md-12 mbr-col-lg-10\">\n                <h1 class=\"mbr-fonts-style main-title align-center mbr-white\" mbr-theme-style=\"display-3\" mbr-if=\"showTitle\" data-app-selector=\".main-title\"><b>Cookie Policy for Gryphene</b><br><br></h1>\n                </div>\n            </div>\n            <div class=\"mbr-row mbr-justify-content-center\">\n                <div class=\"mbr-col-md-12 mbr-col-sm-12 mbr-col-lg-10\">\n                    <amp-accordion class=\"accordion\">\n                        <section>\n                            <header class=\"mbr-section-title\">\n                                <div class=\"fa-wrap\">\n                                    <div class=\"icon-fa-wrap\">\n                                        <span class=\"iconfont-wrapper wrapper-plus\">\n                                            <div class=\"fa fa-plus amp-iconfont\"></div>\n                                        </span>\n                                        <span class=\"iconfont-wrapper wrapper-minus\">\n                                            <div class=\"fa fa-minus amp-iconfont\"></div>\n                                        </span>\n                                    </div>\n                                    <div class=\"fa-wrap border-left\">\n                                        <h4 class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\"><b>What Are Cookies</b></h4>\n                                    </div>\n                                </div>\n                            </header>\n                            <p class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-7\">As is common practice with almost all professional websites this site uses cookies, which are tiny files that are downloaded to your computer, to improve your experience. This page describes what information they gather, how we use it and why we sometimes need to store these cookies. We will also share how you can prevent these cookies from being stored however this may downgrade or 'break' certain elements of the sites functionality.<br><br>For more general information on cookies, please read \"What Are Cookies\".</p>\n                        </section>\n                        <section>\n                            <header class=\"mbr-section-title\">\n                                <div class=\"fa-wrap\">\n                                    <div class=\"icon-fa-wrap\">\n                                        <span class=\"iconfont-wrapper wrapper-plus\">\n                                            <div class=\"fa fa-plus amp-iconfont\"></div>\n                                        </span>\n                                        <span class=\"iconfont-wrapper wrapper-minus\">\n                                            <div class=\"fa fa-minus amp-iconfont\"></div>\n                                        </span>\n                                    </div>\n                                    <div class=\"fa-wrap border-left\">\n                                        <h4 class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\"><div><b style=\"font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; background-color: transparent;\">How We Use Cookies</b><br></div></h4>\n                                    </div>\n                                </div>\n                            </header>\n                            <p class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-7\">\n                                We use cookies for a variety of reasons detailed below. Unfortunately in most cases there are no industry standard options for disabling cookies without completely disabling the functionality and features they add to this site. It is recommended that you leave on all cookies if you are not sure whether you need them or not in case they are used to provide a service that you use.<br><br><b>Disabling Cookies</b><br><br>You can prevent the setting of cookies by adjusting the settings on your browser (see your browser Help for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit. Disabling cookies will usually result in also disabling certain functionality and features of the this site. Therefore it is recommended that you do not disable cookies.<br>\n                            </p>\n                        </section>\n                        <section mbr-class=\"{'super-hide': tabsAmount < 3}\">\n                            <header class=\"mbr-section-title\">\n                                <div class=\"fa-wrap\">\n                                    <div class=\"icon-fa-wrap\">\n                                        <span class=\"iconfont-wrapper wrapper-plus\">\n                                            <div class=\"fa fa-plus amp-iconfont\"></div>\n                                        </span>\n                                        <span class=\"iconfont-wrapper wrapper-minus\">\n                                            <div class=\"fa fa-minus amp-iconfont\"></div>\n                                        </span>\n                                    </div>\n                                    <div class=\"fa-wrap border-left\">\n                                        <h4 class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\"><b>The Cookies We Set</b></h4>\n                                    </div>\n                                </div>\n                            </header>\n                            <p class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-7\"><b>Email newsletters related cookies<br></b><br>This site offers newsletter or email subscription services and cookies may be used to remember if you are already registered and whether to show certain notifications which might only be valid to subscribed/unsubscribed users.<br><br><b>Forms</b> <b>related</b> <b>cookies</b><br><br>When you submit data to through a form such as those found on contact pages or comment forms cookies may be set to remember your user details for future correspondence.<br></p>\n                        </section>\n\n                        <section mbr-class=\"{'super-hide': tabsAmount < 4}\">\n                            <header class=\"mbr-section-title\">\n                                <div class=\"fa-wrap\">\n                                    <div class=\"icon-fa-wrap\">\n                                        <span class=\"iconfont-wrapper wrapper-plus\">\n                                            <div class=\"fa fa-plus amp-iconfont\"></div>\n                                        </span>\n                                        <span class=\"iconfont-wrapper wrapper-minus\">\n                                            <div class=\"fa fa-minus amp-iconfont\"></div>\n                                        </span>\n                                    </div>\n                                    <div class=\"fa-wrap border-left\">\n                                        <h4 class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\"><b>Third Party Cookies</b></h4>\n                                    </div>\n                                </div>\n                            </header>\n                            <p class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-7\">In some special cases we also use cookies provided by trusted third parties. The following section details which third party cookies you might encounter through this site.<br><br>This site uses Google Analytics which is one of the most widespread and trusted analytics solution on the web for helping us to understand how you use the site and ways that we can improve your experience. These cookies may track things such as how long you spend on the site and the pages that you visit so we can continue to produce engaging content.<br><br><b>For</b> <b>more</b> <b>information on Google Analytics cookies, see the official Google Analytics page.<br><br></b>From time to time we test new features and make subtle changes to the way that the site is delivered. When we are still testing new features these cookies may be used to ensure that you receive a consistent experience whilst on the site whilst ensuring we understand which optimisations our users appreciate the most.<br><br>As we sell products it's important for us to understand statistics about how many of the visitors to our site actually make a purchase and as such this is the kind of data that these cookies will track. This is important to you as it means that we can accurately make business predictions that allow us to monitor our advertising and product costs to ensure the best possible price.<br><br>The Google AdSense service we use to serve advertising uses a DoubleClick cookie to serve more relevant ads across the web and limit the number of times that a given ad is shown to you.<br><br><b>For more information on Google AdSense see the official Google AdSense privacy FAQ.</b><br><br>We also use social media buttons and/or plugins on this site that allow you to connect with your social network in various ways. For these to work the following social media sites including; {List the social networks whose features you have integrated with your site? It will set cookies through our site which may be used to enhance your profile on their site or contribute to the data they hold for various purposes outlined in their respective privacy policies.</p>\n                        </section>\n\n                        <section mbr-class=\"{'super-hide': tabsAmount < 5}\">\n                            <header class=\"mbr-section-title\">\n                                <div class=\"fa-wrap\">\n                                    <div class=\"icon-fa-wrap\">\n                                        <span class=\"iconfont-wrapper wrapper-plus\">\n                                            <div class=\"fa fa-plus amp-iconfont\"></div>\n                                        </span>\n                                        <span class=\"iconfont-wrapper wrapper-minus\">\n                                            <div class=\"fa fa-minus amp-iconfont\"></div>\n                                        </span>\n                                    </div>\n                                    <div class=\"fa-wrap border-left\">\n                                        <h4 class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\"><b>More Information</b></h4>\n                                    </div>\n                                </div>\n                            </header>\n                            <p class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-7\">Hopefully that has clarified things for you and as was previously mentioned if there is something that you aren't sure whether you need or not it's usually safer to leave cookies enabled in case it does interact with one of the features you use on our site. This Cookies Policy was created with the help of the Cookies Policy Template Generator and the Privacy Policy Template Generator.<br><br>However if you are still looking for more information then you can contact us through one of our preferred contact methods:<br><br><b>Email: privacy@gryphene.com</b></p>\n                        </section>\n                        <section mbr-class=\"{'super-hide': tabsAmount < 6}\">\n                            <header class=\"mbr-section-title\">\n                                <div class=\"fa-wrap\">\n                                    <div class=\"icon-fa-wrap\">\n                                        <span class=\"iconfont-wrapper wrapper-plus\">\n                                            <div class=\"fa fa-plus amp-iconfont\"></div>\n                                        </span>\n                                        <span class=\"iconfont-wrapper wrapper-minus\">\n                                            <div class=\"fa fa-minus amp-iconfont\"></div>\n                                        </span>\n                                    </div>\n                                    <div class=\"fa-wrap border-left\">\n                                        <h4 class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\">Lorem ipsum dolor</h4>\n                                    </div>\n                                </div>\n                            </header>\n                            <p class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\">\n                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nisl risus, ultrices non dictum id, varius ut erat. Etiam\n                                eget tincidunt eros, at sollicitudin mauris. Nulla vehicula tellus quis justo finibus bibendum.\n                                Nulla consequat at est vitae iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus.\n                            </p>\n                        </section>\n                    </amp-accordion>\n                </div>\n            </div>\n        </div>\n    </section>",
           "_cid": "s4P48dblEE",
+          "_anchor": "features13-a",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {},
-          "_anchor": "features13-a"
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value",
+              "& when (@gradient)": {
+                "background": "linear-gradient(135deg, @bg-value 0%, @bgcolor2 100%)"
+              }
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              "& when not (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background-color": "@overlayColor",
+                  "opacity": "@overlayOpacity"
+                }
+              },
+              "& when (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background": "linear-gradient(135deg, @overlayColor 0%, @ovcolor2 100%)",
+                  "opacity": "@overlayOpacity"
+                }
+              }
+            },
+            ".container": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#ffffff",
+              "text-align": "center"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#ffffff",
+              "text-align": "center"
+            },
+            ".counter-container": {
+              "ol": {
+                "margin-bottom": "0",
+                "li": {
+                  "margin-bottom": "2rem"
+                },
+                "& when (@stylizedCounters)": {
+                  "counter-reset": "myCounter",
+                  "li": {
+                    "z-index": "3",
+                    "list-style": "none",
+                    "padding-left": ".5rem",
+                    "&:before": {
+                      "z-index": "2",
+                      "position": "absolute",
+                      "left": "0px",
+                      "counter-increment": "myCounter",
+                      "content": "counter(myCounter)",
+                      "text-align": "center",
+                      "margin": "0 18px",
+                      "line-height": "40px",
+                      "transition": "all .2s",
+                      "color": "@counterColor",
+                      "font-weight": "bold",
+                      "border-radius": "50%",
+                      "opacity": "@counterOpacity",
+                      "font-size": "~\"@{counterSize}rem\""
+                    }
+                  }
+                }
+              }
+            },
+            ".mbr-text UL": {
+              "text-align": "left"
+            },
+            ".mbr-text LI": {
+              "color": "#ffffff"
+            },
+            ".mbr-text": {
+              "text-align": "left"
+            }
+          },
+          "_name": "content9",
+          "_customHTML": "<section class=\"content9\" group=\"Content\" plugins=\"amp-main\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Stylized Counters\" name=\"stylizedCounters\" checked>\n        <input type=\"color\" title=\"Counters Color\" name=\"counterColor\" value=\"#ffffff\" condition=\"stylizedCounters\">\n        <input type=\"range\" title=\"Counters Size\" inline name=\"counterSize\" min=\"1\" max=\"5\" step=\"1\" value=\"3\" condition=\"stylizedCounters\">\n        <input type=\"range\" title=\"Counters Opacity\" inline name=\"counterOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"stylizedCounters\">\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#0a57a2\" selected>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#e3699a\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\" checked>\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#022e93\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\">\n    </div></section>",
+          "_cid": "s5ObvxLWE6",
+          "_anchor": "content9-i",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
         },
         {
           "alias": false,
@@ -491,15 +524,161 @@
             }
           },
           "_name": "footer7",
-          "_customHTML": "<section class=\"footer7\" group=\"Footers\" plugins=\"amp-main\" global once=\"footer\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"2\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"2\" condition=\"fullScreen == false\">\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#022e93\" selected>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#19a3c1\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\" checked>\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#022e93\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n        <div class=\"align-center\">\n            <h4 class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text\">\n                Copyright (c) 2020 Gryphene</h4>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"footer7\" group=\"Footers\" plugins=\"amp-main\" global once=\"footer\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"4\" condition=\"fullScreen == false\">\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#6394ff\" selected>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#a54997\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\" checked>\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#022e93\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n        <div class=\"align-center\">\n            <h4 class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text\">\n                Copyright (c) 2020 Gryphene</h4>\n        </div>\n    </div>\n</section>",
           "_cid": "s4MBExE8le",
           "_PHPplaceholders": [],
           "_JSplaceholders": [],
+          "_anchor": "footer7-8",
           "_protectedParams": [],
           "_global": true,
           "_once": "footer",
-          "_params": {},
-          "_anchor": "footer7-8"
+          "_params": {}
+        }
+      ]
+    },
+    "terms.html": {
+      "settings": {
+        "title": "terms.html",
+        "order": 2,
+        "header_custom": "",
+        "html_before": "",
+        "meta_descr": "Terms and Conditions California Consumer Protection",
+        "footer_custom": "\n"
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value",
+              "& when (@gradient)": {
+                "background": "linear-gradient(135deg, @bg-value 0%, @bgcolor2 100%)"
+              }
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              "& when not (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background-color": "@overlayColor",
+                  "opacity": "@overlayOpacity"
+                }
+              },
+              "& when (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background": "linear-gradient(135deg, @overlayColor 0%, @ovcolor2 100%)",
+                  "opacity": "@overlayOpacity"
+                }
+              }
+            },
+            ".container": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#ffffff",
+              "text-align": "center"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#ffffff",
+              "text-align": "center"
+            },
+            "ul": {
+              "margin-bottom": "0",
+              "li": {
+                "color": "inherit",
+                "margin-bottom": "1rem",
+                "& when (@stylizedCounters)": {
+                  "list-style": "none",
+                  "&:before": {
+                    "position": "absolute",
+                    "left": "0px",
+                    "margin-top": "-10px",
+                    "padding-top": "0px",
+                    "content": "''",
+                    "display": "inline-block",
+                    "text-align": "center",
+                    "margin": "6px 10px",
+                    "line-height": "20px",
+                    "transition": "all .2s",
+                    "color": "contrast(@counterColor)",
+                    "background": "@counterColor",
+                    "width": "20px",
+                    "height": "20px",
+                    "border-radius": "50%",
+                    "& when (@countersType = 'circle')": {
+                      "background": "none",
+                      "border": "1px solid @counterColor",
+                      "color": "@counterColor"
+                    },
+                    "& when (@countersType = 'square')": {
+                      "border-radius": "0"
+                    },
+                    "& when (@mark)": {
+                      "content": "'✓'"
+                    }
+                  }
+                }
+              }
+            },
+            ".mbr-text UL": {
+              "text-align": "left"
+            }
+          },
+          "_name": "content8",
+          "_customHTML": "<section class=\"content8\" group=\"Content\" plugins=\"amp-main\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"7\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"7\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Stylized Counters\" name=\"stylizedCounters\" checked>\n        <input type=\"color\" title=\"Counter Color\" name=\"counterColor\" value=\"#2bb4c5\" condition=\"stylizedCounters\">\n        <input type=\"checkbox\" title=\"Stylized Counters\" name=\"stylizedCounters\">\n        <input type=\"checkbox\" title=\"Mark\" name=\"mark\" condition=\"stylizedCounters\">\n        <select title=\"Counters Type\" name=\"countersType\" condition=\"stylizedCounters\">\n            <option value=\"default\">Сircle Fill</option>\n            <option value=\"circle\">Circle</option>\n            <option value=\"square\" selected>Square</option>\n        </select>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#117bb1\" selected>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#e3699a\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\" checked>\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#022e93\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-lg-12 mbr-col-md-12\">\n                <h1 class=\"mbr-fonts-style mbr-section-title\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n                    <b>Lead </b>The Effective Team\n                </h1>\n                <div class=\"mbr-text counter-container mbr-fonts-style\" mbr-theme-style=\"display-6\" data-app-selector=\".mbr-text\" data-multiline mbr-article>\n                    <div style=\"text-align: left;\"><span style=\"letter-spacing: 0.5px;\"><b><br></b></span></div><div style=\"text-align: left;\"><span style=\"letter-spacing: 0.5px;\"><b><br></b></span></div><div style=\"text-align: left;\"><span style=\"letter-spacing: 0.5px;\"><b><br></b></span></div><div style=\"text-align: left;\"><span style=\"letter-spacing: 0.5px;\"><b><br></b></span></div><div style=\"text-align: left;\"><span style=\"letter-spacing: 0.5px;\"><b><br></b></span></div><div style=\"text-align: left;\"><span style=\"letter-spacing: 0.5px;\"><b><br></b></span></div><div style=\"text-align: left;\"><span style=\"letter-spacing: 0.5px;\"><b><br></b></span></div><div style=\"text-align: left;\"><span style=\"letter-spacing: 0.5px;\"><b><br></b></span></div><div style=\"text-align: left;\"><span style=\"letter-spacing: 0.5px;\"><b><br></b></span></div><div style=\"text-align: left;\"><span style=\"letter-spacing: 0.5px;\"><b><br></b></span></div><div style=\"text-align: left;\"><span style=\"letter-spacing: 0.5px;\"><b><br></b></span></div><div style=\"text-align: left;\"><span style=\"letter-spacing: 0.5px;\"><b><br></b></span></div><div style=\"text-align: left;\"><span style=\"letter-spacing: 0.5px;\"><b><br></b></span></div><div style=\"text-align: left;\"><span style=\"letter-spacing: 0.5px;\"><b><br></b></span></div><div style=\"text-align: left;\"><span style=\"letter-spacing: 0.5px;\"><b><br></b></span></div>\n                </div>\n                <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-7\">\n                    <a class=\"btn btn-lg mbr-editable-button btn-info\" href=\"https://mobirise.com\">LOREM IPSUM DOLOR</a>\n                    <a class=\"btn btn-lg mbr-editable-button btn-white\" href=\"https://mobirise.com\">LOREM IPSUM DOLOR</a>\n                </div>\n            </div>\n        </div>\n    </div>\n\n</section>",
+          "_cid": "s54lHPPsr5",
+          "_anchor": "content8-g",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value",
+              "& when (@gradient)": {
+                "background": "linear-gradient(135deg, @bg-value 0%, @bgcolor2 100%)"
+              }
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              "& when not (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background-color": "@overlayColor",
+                  "opacity": "@overlayOpacity"
+                }
+              },
+              "& when (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background": "linear-gradient(135deg, @overlayColor 0%, @ovcolor2 100%)",
+                  "opacity": "@overlayOpacity"
+                }
+              }
+            },
+            ".mbr-text": {
+              "color": "#ffffff",
+              "text-align": "center"
+            }
+          },
+          "_name": "footer7",
+          "_customHTML": "<section class=\"footer7\" group=\"Footers\" plugins=\"amp-main\" global once=\"footer\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"4\" condition=\"fullScreen == false\">\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#6394ff\" selected>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#a54997\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\" checked>\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#022e93\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n        <div class=\"align-center\">\n            <h4 class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text\">\n                Copyright (c) 2020 Gryphene</h4>\n        </div>\n    </div>\n</section>",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
+          "_cid": "s54ji5xect",
+          "_anchor": "footer7-c",
+          "_protectedParams": [],
+          "_global": true,
+          "_once": "footer",
+          "_params": {}
         }
       ]
     }
