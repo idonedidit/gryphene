@@ -70,7 +70,7 @@
     },
     "pwa-switcher": false,
     "uniqCompNum": 20,
-    "versionPublish": "5.0.16",
+    "versionPublish": "5.1.4",
     "screenshot": "screenshot.png",
     "publishChangesOnly": false,
     "global_header_custom": "<html ⚡ lang=\"en-us\">\n <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width,minimum-scale=1,initial-scale=1\">\n    <meta name=\"description\" content=\"This is the AMP Boilerplate.\">\n    <link rel=\"preload\" as=\"script\" href=\"https://cdn.ampproject.org/v0.js\">\n    <link rel=\"preload\" as=\"script\" href=\"https://cdn.ampproject.org/v0/amp-dynamic-css-classes-0.1.js\">\n    <link rel=\"preload\" href=\"hero-img.jpg\" as=\"image\">\n    <link rel=\"preconnect dns-prefetch\" href=\"https://fonts.gstatic.com/\" crossorigin>\n    <script async src=\"https://cdn.ampproject.org/v0.js\"></script>\n    <script async custom-element=\"amp-dynamic-css-classes\" src=\"https://cdn.ampproject.org/v0/amp-dynamic-css-classes-0.1.js\"></script>\n    <!-- Import other AMP Extensions here -->\n    <script async custom-element=\"amp-analytics\" src=\"https://cdn.ampproject.org/v0/amp-analytics-0.1.js\"></script>\n    <link href=\"https://fonts.googleapis.com/css?family=Montserrat\" rel=\"stylesheet\">\n    <style amp-custom>\n    /* Add your styles here */\n    </style>\n    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>\n",
@@ -89,10 +89,9 @@
         "main": true,
         "title": "Home",
         "meta_descr": "Gryphene Music - Ableton Expert",
-        "header_custom": "",
+        "header_custom": "<script async src=\"https://cdn.ampproject.org/v0.js\"></script>\n<meta name=\"viewport\"content=\"width=device-width,minimum-scale=1,initial-scale=1\">",
         "footer_custom": "",
-        "html_before": "",
-        "meta_image": "@PROJECT_PATH@/assets/images/mbr-1920x1197.png"
+        "html_before": ""
       },
       "components": [
         {
@@ -298,42 +297,6 @@
           "_protectedParams": [],
           "_global": true,
           "_once": "footer",
-          "_params": {}
-        },
-        {
-          "alias": "social-feed/amp-social-feed",
-          "_isSecondary": true,
-          "typeCompatible": "isAMP",
-          "_styles": {
-            "padding-top": "(@paddingTop * 1rem)",
-            "padding-bottom": "(@paddingBottom * 1rem)",
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)",
-              ".mbr-overlay": {
-                "background-color": "@overlayColor",
-                "opacity": "@overlayOpacity"
-              }
-            },
-            ".instagram-wrapper": {
-              "margin": "auto",
-              "& when (@showSubtitle)": {
-                "padding-top": "1rem"
-              }
-            },
-            ".mbr-section-title": {
-              "color": "#ffffff"
-            }
-          },
-          "_name": "instagram",
-          "_customHTML": "<section class=\"amp-facebook-page mbr-section\" group=\"Custom block\" plugins=\"amp-main, amp-instagram\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n\n        <header>Instagram</header>\n        <input type=\"text\" title=\"Shortcode\" name=\"dataShortcode\" value=\"gryphene\">\n\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"../assets/background.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#361291\" selected>\n        </fieldset>\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type!='color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#f6efe9\" condition=\"bg.type!='color' && overlay\">\n        <input type=\"range\" inline title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"bg.type!='color' && overlay\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\"></div>\n    <div class=\"container align-center\">\n        <div class=\"title\">\n            <h3 class=\"mbr-fonts-style mbr-bold mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n                AMP Instagram\n            </h3>\n            <h4 class=\"mbr-fonts-style mbr-section-subtitle\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n                AMP Instagram Subtitle\n            </h4>\n        </div>\n        <div class=\"instagram-wrapper mbr-col-lg-8\">\n            <amp-instagram data-shortcode=\"gryphene\" width=\"1\" height=\"1\" layout=\"responsive\">\n            </amp-instagram>\n        </div>\n    </div>\n\n</section>",
-          "_cid": "s6pMNwj3wC",
-          "_anchor": "instagram-j",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
           "_params": {}
         }
       ]
